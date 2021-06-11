@@ -1,7 +1,0 @@
-## **_PR TEMPLATE_**
-1. Is this a fix or a feature?
-*
-2. What is the change?
-*
-3. What does it fix?
-*
