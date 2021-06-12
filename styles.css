@@ -11,10 +11,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-body {
-  /* border: 2px solid blue; */
-}
-
 main {
   display: flex;
   justify-content: space-between;
@@ -23,7 +19,7 @@ main {
 section {
   height: 100vh;
   width: 100vw;
-  /* border: 2px solid limegreen; */
+  border: 2px solid #6E6E6E;
 }
 
 img {
@@ -35,6 +31,7 @@ img {
 
 .header-box {
   background-color: #404041;
+  border-bottom: 3px solid #6E6E6E;
   display: flex;
   flex-direction: column;
   justify-content: center;
