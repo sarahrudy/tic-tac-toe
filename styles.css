@@ -13,9 +13,6 @@
 }
 
 body {
-  /* height: 100vh;
-  width: 100vw;
-  margin: 0; */
   border: 2px solid blue;
 }
 
@@ -32,24 +29,24 @@ section {
 
 img {
   margin: 5px;
-  width: 3em;
+  width: 5em;
 }
 
-/* MIDDLE SECTION */
-
-.middle-section {
-
-}
+/* HEADER SECTION */
 
 .header-box {
   background-color: #404041;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0 0 10px 0;
+  height: 20%;
 }
 
-h1 {
+h1,
+h2 {
   color: #D1D2D4;
-  font-size: 100%;
+  font-size: 150%;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -65,34 +62,65 @@ h1 {
 
 h2 {
   color: #DD1972;
-  font-size: 150%;
+  font-size: 325%;
 }
 
 .tic,
 .toe {
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .tac {
   font-weight: 300;
 }
+
 /* GAMEPLAY SECTION */
+
+.gameplay-text {
+  font-size: 150%;
+  padding: 20px;
+}
+
+.board-wrapper {
+
+}
 
 
 
 /* PLAYER ONE & PLAYER TWO SECTIONS */
 
-.player-1-section,
-.player-2-section {
+.x-section,
+.o-section {
   background-color: #D1D2D4;
+  border: solid #6E6E6E;
+  padding: 20px;
   color: #46424D;
+  border-width: 0 0 0 2px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 35%;
+}
 
+.wins-box-wrapper {
+  background-color: #FFFFFF;
+  border: 3px solid #6E6E6E;
+  color: #6E6E6E;
+  font-size: 30px;
+  letter-spacing: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 40px 0 20px 0;
+  text-align: center;
+}
 
+.x-number-of-wins,
+.o-number-of-wins {
+  color: #DD1972;
+  font-weight: 700;
 }
 
 /* HIDE AND DISABLE THINGS */
