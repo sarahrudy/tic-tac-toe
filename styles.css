@@ -9,11 +9,10 @@
 
 * {
   font-family: 'Open Sans', sans-serif;
-  border: 3px solid pink
 }
 
 body {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 
 main {
@@ -24,7 +23,7 @@ main {
 section {
   height: 100vh;
   width: 100vw;
-  border: 2px solid limegreen;
+  /* border: 2px solid limegreen; */
 }
 
 img {
@@ -39,7 +38,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding: 0 0 10px 0; */
+  padding: 0 0 10px 0;
   height: 20%;
 }
 
@@ -48,7 +47,6 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  margin: 0 10px;
 }
 
 h2 {
@@ -87,16 +85,17 @@ h2 {
 
 .gameplay-text {
   font-size: 150%;
-  padding: 20px;
+  padding: 30px;
 }
 
 .board-wrapper {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  height: 500px;
-  width: 500px;
-  grid-gap: 5px solid red;
+  background-color: #DD1972;
+  height: 400px;
+  width: 400px;
+  grid-gap: 5px;
   margin: auto;
 }
 
@@ -109,16 +108,15 @@ h2 {
 .cell-6,
 .cell-7,
 .cell-8 {
+  display: grid;
+  justify-content: space-between;
   background-color: white;
-  width: 85%;
-  height: 85%;
-  margin: 1em;
+  width: 100%;
+  height: 100%;
+  margin: none;
+  border: none;
   cursor: pointer;
 }
-
-/* .cell-0 {
-  border: 0 5px 5px 0
-} */
 
 
 /* X and O SECTIONS */
@@ -126,10 +124,8 @@ h2 {
 .x-section,
 .o-section {
   background-color: #D1D2D4;
-  border: solid #6E6E6E;
   padding: 20px;
   color: #46424D;
-  border-width: 0 0 0 2px;
   display: flex;
   flex-direction: column;
   justify-content: center;
