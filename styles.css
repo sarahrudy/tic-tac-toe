@@ -28,7 +28,7 @@ section {
 }
 
 img {
-  margin: 5px;
+  margin: 1em;
   width: 5em;
 }
 
@@ -39,30 +39,34 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 0 10px 0;
+  /* padding: 0 0 10px 0; */
   height: 20%;
 }
 
 h1,
 h2 {
-  color: #D1D2D4;
-  font-size: 150%;
   display: flex;
   justify-content: center;
   align-items: baseline;
-}
-
-.h1-line {
-  border: solid #D1D2D4;
-  border-width: 2px 0 0 0;
-  height: 8px;
-  width: 100px;
-  margin: 5px;
+  margin: 0 10px;
 }
 
 h2 {
   color: #DD1972;
-  font-size: 325%;
+  font-size: 350%;
+}
+
+.h1-text {
+  color: #D1D2D4;
+  font-size: 150%;
+  padding: 10px;
+}
+
+.h1-line {
+  border: solid #D1D2D4;
+  border-width: .1em 0 0 0;
+  height: 8px;
+  width: 100px;
 }
 
 .tic,
@@ -77,18 +81,46 @@ h2 {
 
 /* GAMEPLAY SECTION */
 
+.gameplay-section {
+  height: 80%;
+}
+
 .gameplay-text {
   font-size: 150%;
   padding: 20px;
 }
 
 .board-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  height: 80%;
+  grid-gap: 7px;
+  margin: 0 40px 70px 40px;
+}
 
+.cell-0,
+.cell-1,
+.cell-2,
+.cell-3,
+.cell-4,
+.cell-5,
+.cell-6,
+.cell-7,
+.cell-8 {
+  background-color: white;
+  width: 85%;
+  height: 85%;
+  margin: 1em;
+  cursor: pointer;
 }
 
 
 
-/* PLAYER ONE & PLAYER TWO SECTIONS */
+
+/* X and O SECTIONS */
 
 .x-section,
 .o-section {
@@ -104,7 +136,7 @@ h2 {
   width: 35%;
 }
 
-.wins-box-wrapper {
+.num-wins-wrapper {
   background-color: #FFFFFF;
   border: 3px solid #6E6E6E;
   color: #6E6E6E;
@@ -117,10 +149,11 @@ h2 {
   text-align: center;
 }
 
-.x-number-of-wins,
-.o-number-of-wins {
+.x-num-of-wins,
+.o-num-of-wins {
   color: #DD1972;
   font-weight: 700;
+  padding: 10px 10px 10px 5px;
 }
 
 /* HIDE AND DISABLE THINGS */
