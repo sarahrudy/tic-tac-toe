@@ -1,43 +1,90 @@
-/* *,
+*,
 *:after,
 *:before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   text-align: center;
-} */
+}
 
 * {
   font-family: 'Open Sans', sans-serif;
-  border: 2px solid red;
 }
 
-body, html {
-  height: 100vh;
-  /* width: 100vh; */
+body {
+  /* height: 100vh;
+  width: 100vw;
+  margin: 0; */
+  border: 2px solid blue;
 }
 
 main {
   display: flex;
-  flex-direction: row;
-  color: #6e6e6e;
+  justify-content: space-between;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  border: 2px solid limegreen;
+}
+
+img {
+  margin: 5px;
+  width: 3em;
 }
 
 /* MIDDLE SECTION */
 
-header {
+.middle-section {
+
+}
+
+.header-box {
   background-color: #404041;
   text-align: center;
-  padding: 0 0 15px 0;
-  margin: 0;
+  padding: 0 0 10px 0;
 }
 
 h1 {
+  color: #D1D2D4;
+  font-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.h1-line {
+  border: solid #D1D2D4;
+  border-width: 2px 0 0 0;
+  height: 8px;
+  width: 100px;
+  margin: 5px;
+}
+
+h2 {
   color: #DD1972;
-  margin: 0;
+  font-size: 150%;
+}
+
+.tic,
+.toe {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.tac {
+  font-weight: 300;
 }
 /* GAMEPLAY SECTION */
 
 /* PLAYER ONE SECTION */
 
+.player-1-section,
+.player-2-section {
+
+}
+
 /* PLAYER TWO SECTION */
+
+/* HIDE AND DISABLE THINGS */
