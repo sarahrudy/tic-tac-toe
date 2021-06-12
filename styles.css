@@ -54,6 +54,7 @@ h2 {
 .h1-text {
   color: #D1D2D4;
   font-size: 1em;
+  font-weight: 300;
   padding: 10px;
 }
 
@@ -68,6 +69,7 @@ h2 {
 .toe {
   font-weight: 700;
   letter-spacing: 3px;
+  padding: 0 15px 0 15px;
 }
 
 .tac {
@@ -82,7 +84,7 @@ h2 {
 
 .gameplay-text {
   font-size: 150%;
-  padding: 30px;
+  padding: 30px 30px 50px 30px;
 }
 
 .board-wrapper {
@@ -95,6 +97,19 @@ h2 {
   grid-gap: 5px;
   margin: auto;
 }
+
+/* .disable-cell-0,
+.disable-cell-1,
+.disable-cell-2,
+.disable-cell-3,
+.disable-cell-4,
+.disable-cell-5,
+.disable-cell-6,
+.disable-cell-7,
+.disable-cell-8 {
+  background: lightgray;
+  cursor: not-allowed;
+} */
 
 .cell-0,
 .cell-1,
