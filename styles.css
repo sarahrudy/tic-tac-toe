@@ -53,12 +53,12 @@ h2 {
 
 h2 {
   color: #DD1972;
-  font-size: 350%;
+  font-size: 3em;
 }
 
 .h1-text {
   color: #D1D2D4;
-  font-size: 150%;
+  font-size: 1em;
   padding: 10px;
 }
 
@@ -92,13 +92,12 @@ h2 {
 
 .board-wrapper {
   display: grid;
-  justify-content: center;
-  align-items: center;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  height: 80%;
-  grid-gap: 7px;
-  margin: 0 40px 70px 40px;
+  height: 500px;
+  width: 500px;
+  grid-gap: 5px solid red;
+  margin: auto;
 }
 
 .cell-0,
@@ -117,7 +116,9 @@ h2 {
   cursor: pointer;
 }
 
-
+/* .cell-0 {
+  border: 0 5px 5px 0
+} */
 
 
 /* X and O SECTIONS */
