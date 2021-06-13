@@ -3,6 +3,11 @@
 var player1 = new Player("X", ".x-icon")
 var player2 = new Player("O", ".o-icon")
 
+// if player1 clicks in a cell, it should change from "" to X
+// after player1 plays, currentTurn should switch to player2 and an O should appear when player2 clicks in a cell
+// if one of the cells contains an icon already, we don't want the player to be able to click it again
+
+
 // start with an empty board
 var renderEmptyBoard = ["", "", "", "", "", "", "", "", ""]
 
@@ -14,6 +19,7 @@ var currentTurn = "X";
 // starts off as "X" and after "X" picks a spot, update boardDisplay
 // after X goes, update the data model
 currentTurn = "O";
+
 
 // winning combinations
 var winnerWinnerChickenDinner = [
