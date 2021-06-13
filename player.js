@@ -3,6 +3,7 @@ class Player {
     this.id = id;
     this.icon = icon;
     this.wins = [];
+    this.winner = false;
   }
 }
 
