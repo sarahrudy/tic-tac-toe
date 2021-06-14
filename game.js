@@ -9,13 +9,18 @@ class Game {
 //have to be able to check them against the possible win conditions
 //parse through arrays with for loop
 
-playerMove(player, cell) {
-  this.totalPlays++
-  if(player.currentTurn) {
-   this.boardDisplay.push(player.id, Number(cell))
+  playerMove(player, cell) {
+    this.totalPlays++
+    if(player.currentTurn) {
+    this.boardDisplay.splice(Number(cell), 1, player.id)
+    }
+    switchPlayer()
+  }
+
+  switchPlayer() {
+    player.currentTurn = false 
   }
 }
-
 // draw() {
 //   if (this.totalPlays === 9 && )
 // }
@@ -32,16 +37,16 @@ playerMove(player, cell) {
 
 
 // winning combinations
-winningCells () = [
-  [0,1,2],
-  [3,4,5],
-  [6,7,8],
-  [0,3,6],
-  [1,4,7],
-  [2,5,8],
-  [0,4,8],
-  [2,4,6]
-];
+// var winningCells = [
+//   [0,1,2],
+//   [3,4,5],
+//   [6,7,8],
+//   [0,3,6],
+//   [1,4,7],
+//   [2,5,8],
+//   [0,4,8],
+//   [2,4,6]
+// ];
 
 // if buttons are selected by the X or O in the previous combinations, game is over and a winner is declared
 // if X wins, increase .x-num-of-wins by 1
