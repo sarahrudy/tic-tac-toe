@@ -6,11 +6,12 @@ class Player {
     this.wins = 0;
   }
 
+  tallyWin() {
+    this.wins++
+  }
 
   saveWinsToStorage() {
-  // push win into wins array
-  // count wins
-  // increase counter
+    // localStorage.setItem(use JSON here)
   }
 
   retrieveWinsFromStorage() {
