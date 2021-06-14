@@ -1,28 +1,38 @@
+class Game {
+  constructor() {
+    this.player1 = new Player("X", ".x-icon", true);
+    this.player2 = new Player("O", ".o-icon", false);
+    this.totalPlays = 0;
+    this.boardDisplay = ["", "", "", "", "", "", "", "", ""];
+  }
 
-// two player instances
-var player1 = new Player("X", ".x-icon")
-var player2 = new Player("O", ".o-icon")
+//have to be able to check them against the possible win conditions
+//parse through arrays with for loop
+
+playerMove(player, cell) {
+  this.totalPlays++
+  if(player.currentTurn) {
+   this.boardDisplay.push(player.id, Number(cell))
+  }
+}
+
+// draw() {
+//   if (this.totalPlays === 9 && )
+// }
+
 
 // if player1 clicks in a cell, it should change from "" to X
 // after player1 plays, currentTurn should switch to player2 and an O should appear when player2 clicks in a cell
 // if one of the cells contains an icon already, we don't want the player to be able to click it again
 
-
-// start with an empty board
-var renderEmptyBoard = ["", "", "", "", "", "", "", "", ""]
-
-// after player "X" clicks on one of the 9 buttons, update the board
-var boardDisplay = ["X", "", "", "", "", "", "", "", ""]
-// for example
-
-var currentTurn = "X";
-// starts off as "X" and after "X" picks a spot, update boardDisplay
-// after X goes, update the data model
-currentTurn = "O";
+// var currentTurn = "X";
+// // starts off as "X" and after "X" picks a spot, update boardDisplay
+// // after X goes, update the data model
+// currentTurn = "O";
 
 
 // winning combinations
-var winnerWinnerChickenDinner = [
+winningCells () = [
   [0,1,2],
   [3,4,5],
   [6,7,8],
@@ -37,9 +47,9 @@ var winnerWinnerChickenDinner = [
 // if X wins, increase .x-num-of-wins by 1
 // if O wins, increase .o-num-of-wins by 1
 
-function draw() {
-  if (!boardDisplay.includes(winnerWinnerChickenDinner[0], winnerWinnerChickenDinner[1], winnerWinnerChickenDinner[2], winnerWinnerChickenDinner[3], winnerWinnerChickenDinner[4], winnerWinnerChickenDinner[5], winnerWinnerChickenDinner[6], winnerWinnerChickenDinner[7], winnerWinnerChickenDinner[8])
-}
+// function draw() {
+//   if (!boardDisplay.includes(winnerWinnerChickenDinner[0], winnerWinnerChickenDinner[1], winnerWinnerChickenDinner[2], winnerWinnerChickenDinner[3], winnerWinnerChickenDinner[4], winnerWinnerChickenDinner[5], winnerWinnerChickenDinner[6], winnerWinnerChickenDinner[7], winnerWinnerChickenDinner[8])
+// }
 
 // if no winner or it's a draw, display winner message or draw message and automatically reset the board onClick anywhere on the screen
 
