@@ -3,13 +3,14 @@ class Player {
     this.id = id;
     this.icon = icon;
     this.currentTurn = currentTurn;
-    this.wins = [];
-    this.winner = false;
+    this.wins = 0;
   }
 
 
   saveWinsToStorage() {
   // push win into wins array
+  // count wins
+  // increase counter
   }
 
   retrieveWinsFromStorage() {
