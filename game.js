@@ -8,8 +8,6 @@ class Game {
     this.hasWinner = false;
   }
 
-//have to be able to check them against the possible win conditions
-//parse through arrays with for loop
 
   playerMove(player, cell) {
     this.totalPlays++
@@ -18,6 +16,16 @@ class Game {
     this.updateTurn()
     }
   }
+
+// use this one if you end up removing this.currentTurn from Player properties in constructor
+// also remove currentTurn paramater and third argument in this.player1/this.player2 in game class
+  // playerMove(player, cell) {
+  //   this.totalPlays++
+  //   if(this.currentPlayer) {
+  //   this.boardDisplay.splice(Number(cell), 1, player.id)
+  //   this.updateTurn()
+  //   }
+  // }
 
   switchPlayer(player) {
     this.currentPlayer = player
@@ -36,28 +44,19 @@ class Game {
     }
   }
 
+  //have to be able to check them against the possible win conditions
+  //parse through arrays with for loop
+  // evaluateBoard() {
+  //   // logic to check number of total plays
+  //   // if total plays is >= 5 && <= 9, check board against winning combinations
+  //   // if totalPlays = 9 and no winning coditions are met, then it's a draw
+  //
+  // }
+
 // draw() {
 //   if (this.totalPlays === 9 && )
 // }
-
-
-// if player1 clicks in a cell, it should change from "" to X
-// after player1 plays, currentTurn should switch to player2 and an O should appear when player2 clicks in a cell
-// if one of the cells contains an icon already, we don't want the player to be able to click it again
-
-// var currentTurn = "X";
-// // starts off as "X" and after "X" picks a spot, update boardDisplay
-// // after X goes, update the data model
-// currentTurn = "O";
-
-evaluateBoard() {
-  // logic to check number of total plays
-  // if total plays is >= 5 && <= 9, check board against winning combinations
-  // if totalPlays = 9 and no winning coditions are met, then it's a draw
-
-}
-
-// winning combinations
+winner() {
 var winningCells = [
   [0,1,2],
   [3,4,5],
@@ -68,6 +67,11 @@ var winningCells = [
   [0,4,8],
   [2,4,6]
 ];
+this.hasWinner = true
+player.wins++
+}
+
+//
 
 // if buttons are selected by the X or O in the previous combinations, game is over and a winner is declared
 // if X wins, increase .x-num-of-wins by 1
