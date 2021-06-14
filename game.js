@@ -3,7 +3,9 @@ class Game {
     this.player1 = new Player("X", ".x-icon", true);
     this.player2 = new Player("O", ".o-icon", false);
     this.totalPlays = 0;
+    this.currentPlayer = this.player1;
     this.boardDisplay = ["", "", "", "", "", "", "", "", ""];
+    this.hasWinner = false;
   }
 
 //have to be able to check them against the possible win conditions
@@ -13,14 +15,27 @@ class Game {
     this.totalPlays++
     if(player.currentTurn) {
     this.boardDisplay.splice(Number(cell), 1, player.id)
+    this.updateTurn()
     }
-    switchPlayer()
   }
 
-  switchPlayer() {
-    player.currentTurn = false 
+  switchPlayer(player) {
+    this.currentPlayer = player
   }
-}
+
+  updateTurn() {
+    if (this.player1.currentTurn) {
+      this.player1.currentTurn = false
+      this.player2.currentTurn = true
+      this.switchPlayer(this.player2)
+    } else if (this.player2.currentTurn) {
+      this.player1.currentTurn = true
+      this.player2.currentTurn = false
+      this.switchPlayer(this.player1)
+      }
+    }
+  }
+
 // draw() {
 //   if (this.totalPlays === 9 && )
 // }
@@ -35,18 +50,24 @@ class Game {
 // // after X goes, update the data model
 // currentTurn = "O";
 
+evaluateBoard() {
+  // logic to check number of total plays
+  // if total plays is >= 5 && <= 9, check board against winning combinations
+  // if totalPlays = 9 and no winning coditions are met, then it's a draw
+
+}
 
 // winning combinations
-// var winningCells = [
-//   [0,1,2],
-//   [3,4,5],
-//   [6,7,8],
-//   [0,3,6],
-//   [1,4,7],
-//   [2,5,8],
-//   [0,4,8],
-//   [2,4,6]
-// ];
+var winningCells = [
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6]
+];
 
 // if buttons are selected by the X or O in the previous combinations, game is over and a winner is declared
 // if X wins, increase .x-num-of-wins by 1
