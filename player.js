@@ -1,8 +1,7 @@
 class Player {
-  constructor(id, icon, currentTurn) {
+  constructor(id, icon) {
     this.id = id;
     this.icon = icon;
-    this.currentTurn = currentTurn;
     this.wins = 0;
   }
 
