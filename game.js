@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player1 = new Player("X", ".x-icon", true);
-    this.player2 = new Player("O", ".o-icon", false);
+    this.player1 = new Player("X", "❌");
+    this.player2 = new Player("O", "◎");
     this.totalPlays = 0;
     this.currentPlayer = this.player1;
     this.boardDisplay = ["", "", "", "", "", "", "", "", ""];
@@ -9,12 +9,13 @@ class Game {
     this.draw = false;
   }
 
-  // A Game should include:
+  // Don't forget:
   // A way to reset the Game’s board to begin a new game
+  // A timeout is used after a completed game to reset the board.
 
   playerMove(player, cell) {
     this.totalPlays++
-    if(player.currentTurn) {
+    if(this.currentPlayer) {
     this.boardDisplay.splice(Number(cell), 1, player.id)
     this.updateTurn()
     }
@@ -26,14 +27,14 @@ class Game {
 
 // use toggle for this!
   updateTurn() {
-    if (this.player1.currentTurn) {
-      this.player1.currentTurn = false
-      this.player2.currentTurn = true
+    if (this.currentPlayer) {
+      this.currentPlayer = false
+      this.currentPlayer = true
       this.switchPlayer(this.player2)
       // return "it's player 2's turn" message here
-    } else if (this.player2.currentTurn) {
-      this.player1.currentTurn = true
-      this.player2.currentTurn = false
+    } else if (this.currentPLayer) {
+      this.currentPlayer = true
+      this.currentPLayer = false
       this.switchPlayer(this.player1)
       // return "it's player 1's turn" message here
     }
@@ -49,25 +50,32 @@ class Game {
     }
   }
 
-  checkWinConditions() {
-    if(this.boardDisplay[0].includes(this.currentPlayer.id) &&
-      this.boardDisplay[1].includes(this.currentPlayer.id) && this.boardDisplay[2].includes(this.currentPlayer.id))
-      ||
-      (this.boardDisplay[3].includes(this.currentPlayer.id) && this.boardDisplay[4].includes(this.currentPlayer.id) && this.boardDisplay[5].includes(this.currentPlayer.id))
-      ||
-      (this.boardDisplay[6].includes(this.currentPlayer.id) && this.boardDisplay[7].includes(this.currentPlayer.id) && this.boardDisplay[8].includes(this.currentPlayer.id))
-      ||
-      (this.boardDisplay[0].includes(this.currentPlayer.id) && this.boardDisplay[3].includes(this.currentPlayer.id) && this.boardDisplay[6].includes(this.currentPlayer.id))
-      ||
-      (this.boardDisplay[1].includes(this.currentPlayer.id) && this.boardDisplay[4].includes(this.currentPlayer.id) && this.boardDisplay[7].includes(this.currentPlayer.id))
-      ||
-      (this.boardDisplay[2].includes(this.currentPlayer.id) && this.boardDisplay[5].includes(this.currentPlayer.id) && this.boardDisplay[8].includes(this.currentPlayer.id))
-      ||
-      (this.boardDisplay[0].includes(this.currentPlayer.id) && this.boardDisplay[4].includes(this.currentPlayer.id) && this.boardDisplay[8].includes(this.currentPlayer.id))
-      ||
-      (this.boardDisplay[2].includes(this.currentPlayer.id) && this.boardDisplay[4].includes(this.currentPlayer.id) && this.boardDisplay[6].includes(this.currentPlayer.id))
-        this.winner();
-      }
+  // checkWinConditions() {
+  //   if(this.boardDisplay[0].includes(this.currentPlayer.id) &&
+  //      this.boardDisplay[1].includes(this.currentPlayer.id) && this.boardDisplay[2].includes(this.currentPlayer.id))
+  //     ||
+  //     (this.boardDisplay[3].includes(this.currentPlayer.id) &&
+  //      this.boardDisplay[4].includes(this.currentPlayer.id) && this.boardDisplay[5].includes(this.currentPlayer.id))
+  //     ||
+  //     (this.boardDisplay[6].includes(this.currentPlayer.id) &&
+  //      this.boardDisplay[7].includes(this.currentPlayer.id) && this.boardDisplay[8].includes(this.currentPlayer.id))
+  //     ||
+  //     (this.boardDisplay[0].includes(this.currentPlayer.id) &&
+  //      this.boardDisplay[3].includes(this.currentPlayer.id) && this.boardDisplay[6].includes(this.currentPlayer.id))
+  //     ||
+  //     (this.boardDisplay[1].includes(this.currentPlayer.id) &&
+  //      this.boardDisplay[4].includes(this.currentPlayer.id) && this.boardDisplay[7].includes(this.currentPlayer.id))
+  //     ||
+  //     (this.boardDisplay[2].includes(this.currentPlayer.id) &&
+  //      this.boardDisplay[5].includes(this.currentPlayer.id) && this.boardDisplay[8].includes(this.currentPlayer.id))
+  //     ||
+  //     (this.boardDisplay[0].includes(this.currentPlayer.id) &&
+  //      this.boardDisplay[4].includes(this.currentPlayer.id) && this.boardDisplay[8].includes(this.currentPlayer.id))
+  //     ||
+  //     (this.boardDisplay[2].includes(this.currentPlayer.id) &&
+  //      this.boardDisplay[4].includes(this.currentPlayer.id) && this.boardDisplay[6].includes(this.currentPlayer.id))
+  //       this.winner();
+  //     }
 
   winner() {
     this.hasWinner = true
@@ -106,3 +114,4 @@ class Game {
 // if no winner or it's a draw, display winner message or draw message and automatically reset the board onClick anywhere on the screen
 
 // create button to reset the game??
+// Automatically reset the game board to allow for a new game to be played after the previous game is won
