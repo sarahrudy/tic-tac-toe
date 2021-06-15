@@ -1,6 +1,5 @@
 var game = new Game() ;
 
-// window.onlaod = boardDisplay
 var buttons = document.querySelectorAll('button')
 var gameplayText = document.querySelector('.gameplay-text')
 
@@ -16,13 +15,15 @@ function loadPage() {
   }
 }
 
-
 function placeIcon(event) {
   event.preventDefault()
-  if (event.target.classList.contains('cell')) {
-    game.playerMove()
+  for (var i = 0; i < buttons.length; i++) {
+    if (game.currentPlayer.id === game.player1.id && event.target.id === buttons[i].id) {
+    buttons[i].innerHTML = '<img class="x-icon" src="assets/x.svg" alt="X">'
+  } else if (game.currentPlayer.id === game.player2.id && event.target.id === buttons[i].id) {
+  buttons[i].innerHTML = '<img class="o-icon" src="assets/o.svg" alt="O">'
+  }
+  console.log("buttons");
+  // event.target.classList.add('disabled');
   }
 }
-
-
-// if(.cell-0.contains("X"))
