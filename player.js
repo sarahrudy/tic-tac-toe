@@ -3,6 +3,7 @@ class Player {
     this.id = id;
     this.icon = icon;
     this.wins = 0;
+    this.isWinner = false;
   }
 
   tallyWin() {
