@@ -4,7 +4,7 @@ class Game {
     this.player2 = new Player("O", "◎");
     this.totalPlays = 0;
     this.currentPlayer = this.player1;
-    this.boardDisplay = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
+    this.boardDisplay = ["", "", "", "", "", "", "", "", ""];
     this.draw = false;
   }
 
@@ -26,10 +26,8 @@ class Game {
   evaluateBoard() {
   if (this.totalPlays >= 5 && this.totalPlays <= 9) {
     this.checkWinConditions()
-  } else if (this.totalPlays === 9 && !this.hasWinner) {
-    this.draw = true
+    }
   }
-}
 
   checkWinConditions() {
     if (this.boardDisplay[0] === this.boardDisplay[1] && this.boardDisplay[1] === this.boardDisplay[2] && this.boardDisplay[2] === this.currentPlayer.id) {
@@ -49,8 +47,7 @@ class Game {
     } else if (this.boardDisplay[2] === this.boardDisplay[4] && this.boardDisplay[4] === this.boardDisplay[6] && this.boardDisplay[6] === this.currentPlayer.id) {
       this.updateWinner();
     } else if (this.totalPlays === 9) {
-      this.reset()
-      this.drawGame = true;
+      this.draw = true
     }
   }
 
@@ -60,9 +57,11 @@ class Game {
   }
 
   reset() {
-    this.boardDisplay = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+    this.boardDisplay = ["r", "r", "r", "r", "r", "r", "r", "r", "r"];
     this.totalPlays = 0
     this.player1.isWinner = false
     this.player2.isWinner = false
+    this.draw = false
+    this.currentPlayer = this.player1
   }
 }
