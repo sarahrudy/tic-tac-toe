@@ -9,7 +9,6 @@
 
 * {
   font-family: 'Open Sans', sans-serif;
-  /* border: 2px solid red */
 }
 
 main {
@@ -105,19 +104,6 @@ h2 {
   width: 100px;
 }
 
-.disable-cell-0,
-.disable-cell-1,
-.disable-cell-2,
-.disable-cell-3,
-.disable-cell-4,
-.disable-cell-5,
-.disable-cell-6,
-.disable-cell-7,
-.disable-cell-8 {
-  background: lightgray;
-  cursor: not-allowed;
-}
-
 .cell-0,
 .cell-1,
 .cell-2,
@@ -135,14 +121,6 @@ h2 {
   border: none;
   cursor: pointer;
 }
-
-/* .play-again {
-  background-color: #46424D;
-  color: white;
-  padding: 5px;
-  margin: 30px;
-} */
-
 
 /* X and O SIDE SECTIONS */
 
@@ -176,10 +154,4 @@ h2 {
   color: #DD1972;
   font-weight: 700;
   padding: 10px 10px 10px 5px;
-}
-
-/* HIDE AND DISABLE THINGS */
-
-.cannot-click {
-  pointer-events: none
 }
