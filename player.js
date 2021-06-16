@@ -2,7 +2,7 @@ class Player {
   constructor(id, icon) {
     this.id = id;
     this.icon = icon;
-    this.wins = 0;
+    this.wins = 0
     this.isWinner = false;
   }
 
@@ -11,10 +11,12 @@ class Player {
   }
 
   saveWinsToStorage() {
-    // localStorage.setItem(use JSON here)
+    var stringOfWins = JSON.stringify(this.wins)
+    localStorage.setItem(`${this.id}`, stringOfWins)
   }
 
   retrieveWinsFromStorage() {
-  // be able to keep score until a "reset scores" button is pushed
+    var retrievedWins = JSON.parse(localStorage.getItem(`${this.id}`))
+    this.wins = retrievedWins || 0
   }
 }

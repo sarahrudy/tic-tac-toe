@@ -56,8 +56,8 @@ class Game {
     this.currentPlayer.tallyWin()
   }
 
-  reset() {
-    this.boardDisplay = ["r", "r", "r", "r", "r", "r", "r", "r", "r"];
+  resetBoardData() {
+    this.boardDisplay = ["", "", "", "", "", "", "", "", ""];
     this.totalPlays = 0
     this.player1.isWinner = false
     this.player2.isWinner = false
