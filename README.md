@@ -2,24 +2,20 @@
 
 ## GIF of Gameplay
 
-
+![tictactoe](https://user-images.githubusercontent.com/78389005/122148663-1d3ce880-ce18-11eb-8d72-b65fec318b04.gif)
 
 ## Learning Goals
 
-* Solidify and demonstrate your understanding of:
-    - DRY JavaScript
-    - localStorage to persist data
-    - event delegation to handle similar event listeners
+* Demonstrate understanding of JavaScript, localStorage, and event delegation 
 * Understand the difference between the data model and how the data is displayed on the DOM
-* Iterate through/filter DOM elements using for loops
-* Use problem solving skills to break down large problems
+* Iterate through DOM elements using for loops
+* Use logic to solve complex problems 
 
 ## Technologies Used
 
 * HTML
 * CSS
 * JavaScript
-* localStorage
 
 ## Main Contributor
 
