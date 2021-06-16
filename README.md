@@ -1,7 +1,5 @@
 # Tic Tac Toe
 
-## GIF of Gameplay
-
 ![tictactoe2](https://user-images.githubusercontent.com/78389005/122148845-5e34fd00-ce18-11eb-912c-d59f027fc57d.gif)
 
 
