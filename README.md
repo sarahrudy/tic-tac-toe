@@ -2,7 +2,8 @@
 
 ## GIF of Gameplay
 
-![tictactoe](https://user-images.githubusercontent.com/78389005/122148663-1d3ce880-ce18-11eb-8d72-b65fec318b04.gif)
+![tictactoe2](https://user-images.githubusercontent.com/78389005/122148845-5e34fd00-ce18-11eb-912c-d59f027fc57d.gif)
+
 
 ## Learning Goals
 
