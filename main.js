@@ -1,4 +1,4 @@
-var game = new Game() ;
+var game = new Game()
 
 var buttons = document.querySelectorAll('button')
 var gameplayText = document.querySelector('.gameplay-text')
