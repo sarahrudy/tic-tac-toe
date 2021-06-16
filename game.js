@@ -1,40 +1,67 @@
+class Game {
+  constructor() {
+    this.player1 = new Player("X", "𝗫");
+    this.player2 = new Player("O", "◎");
+    this.totalPlays = 0;
+    this.currentPlayer = this.player1;
+    this.boardDisplay = ["", "", "", "", "", "", "", "", ""];
+    this.draw = false;
+  }
 
-// two player instances
-var player1 = new Player("X", ".x-icon")
-var player2 = new Player("O", ".o-icon")
+  playerMove(click) {
+    this.totalPlays++
+    if(this.currentPlayer) {
+    this.boardDisplay.splice(click, 1, this.currentPlayer.id)
+    }
+  }
 
-// start with an empty board
-var renderEmptyBoard = ["", "", "", "", "", "", "", "", ""]
+  switchPlayer() {
+    if (this.currentPlayer === this.player1) {
+      this.currentPlayer = this.player2
+    } else if (this.currentPlayer === this.player2) {
+      this.currentPlayer = this.player1
+    }
+  }
 
-// after player "X" clicks on one of the 9 buttons, update the board
-var boardDisplay = ["X", "", "", "", "", "", "", "", ""]
-// for example
+  evaluateBoard() {
+  if (this.totalPlays >= 5 && this.totalPlays <= 9) {
+    this.checkWinConditions()
+    }
+  }
 
-var currentTurn = "X";
-// starts off as "X" and after "X" picks a spot, update boardDisplay
-// after X goes, update the data model
-currentTurn = "O";
+  checkWinConditions() {
+    if (this.boardDisplay[0] === this.boardDisplay[1] && this.boardDisplay[1] === this.boardDisplay[2] && this.boardDisplay[2] === this.currentPlayer.id) {
+      this.updateWinner();
+    } else if (this.boardDisplay[3] === this.boardDisplay[4] && this.boardDisplay[4] === this.boardDisplay[5] && this.boardDisplay[5] === this.currentPlayer.id) {
+      this.updateWinner();
+    } else if (this.boardDisplay[6] === this.boardDisplay[7] && this.boardDisplay[7] === this.boardDisplay[8] && this.boardDisplay[8] === this.currentPlayer.id) {
+      this.updateWinner();
+    } else if (this.boardDisplay[0] === this.boardDisplay[3] && this.boardDisplay[3] === this.boardDisplay[6] && this.boardDisplay[6] === this.currentPlayer.id) {
+      this.updateWinner();
+    } else if (this.boardDisplay[1] === this.boardDisplay[4] && this.boardDisplay[4] === this.boardDisplay[7] && this.boardDisplay[7] === this.currentPlayer.id) {
+      this.updateWinner();
+    } else if (this.boardDisplay[2] === this.boardDisplay[5] && this.boardDisplay[5] === this.boardDisplay[8] && this.boardDisplay[8] === this.currentPlayer.id) {
+      this.updateWinner();
+    } else if (this.boardDisplay[0] === this.boardDisplay[4] && this.boardDisplay[4] === this.boardDisplay[8] && this.boardDisplay[8] === this.currentPlayer.id) {
+      this.updateWinner();
+    } else if (this.boardDisplay[2] === this.boardDisplay[4] && this.boardDisplay[4] === this.boardDisplay[6] && this.boardDisplay[6] === this.currentPlayer.id) {
+      this.updateWinner();
+    } else if (this.totalPlays === 9) {
+      this.draw = true
+    }
+  }
 
-// winning combinations
-var winnerWinnerChickenDinner = [
-  [0,1,2],
-  [3,4,5],
-  [6,7,8],
-  [0,3,6],
-  [1,4,7],
-  [2,5,8],
-  [0,4,8],
-  [2,4,6]
-];
+  updateWinner() {
+    this.currentPlayer.isWinner = true
+    this.currentPlayer.tallyWin()
+  }
 
-// if buttons are selected by the X or O in the previous combinations, game is over and a winner is declared
-// if X wins, increase .x-num-of-wins by 1
-// if O wins, increase .o-num-of-wins by 1
-
-function draw() {
-  if (!boardDisplay.includes(winnerWinnerChickenDinner[0], winnerWinnerChickenDinner[1], winnerWinnerChickenDinner[2], winnerWinnerChickenDinner[3], winnerWinnerChickenDinner[4], winnerWinnerChickenDinner[5], winnerWinnerChickenDinner[6], winnerWinnerChickenDinner[7], winnerWinnerChickenDinner[8])
+  reset() {
+    this.boardDisplay = ["r", "r", "r", "r", "r", "r", "r", "r", "r"];
+    this.totalPlays = 0
+    this.player1.isWinner = false
+    this.player2.isWinner = false
+    this.draw = false
+    this.currentPlayer = this.player1
+  }
 }
-
-// if no winner or it's a draw, display winner message or draw message and automatically reset the board onClick anywhere on the screen
-
-// create button to reset the game??
