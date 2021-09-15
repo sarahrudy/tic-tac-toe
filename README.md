@@ -2,6 +2,9 @@
 
 ![tictactoe2](https://user-images.githubusercontent.com/78389005/122148845-5e34fd00-ce18-11eb-912c-d59f027fc57d.gif)
 
+## Main Contributor
+
+* [Sarah Rudy](https://github.com/sarahrudy)
 
 ## Learning Goals
 
@@ -16,14 +19,6 @@
 * HTML
 * CSS
 * JavaScript
-
-## Main Contributor
-
-* [Sarah Rudy](https://github.com/sarahrudy)
-
-## Project Manager
-
-* [Heather Faerber](https://github.com/hfaerber)
 
 ## Functionality to Revisit
 
