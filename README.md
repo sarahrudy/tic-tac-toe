@@ -18,7 +18,7 @@
 
 * HTML
 * CSS
-* JavaScript
+* Vanilla JavaScript
 
 ## Functionality to Revisit
 
