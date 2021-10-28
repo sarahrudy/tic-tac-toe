@@ -11,7 +11,7 @@
 * Create Tic, Tac, Toe game from scratch building the HTML first and styling with CSS
 * Add functionality to demonstrate understanding of JavaScript, localStorage, and event delegation 
 * Understand the difference between the data model and how the data is displayed on the DOM
-* Iterate through DOM elements using for loops
+* Iterate through DOM elements using `for loop`s
 * Use logic to solve complex problems 
 
 ## Technologies Used
